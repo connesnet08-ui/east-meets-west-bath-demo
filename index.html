@@ -6,6 +6,7 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="description" content="A concept website preview for East Meets West, a Chinese restaurant and noodle bar on Southgate Street in Bath.">
   <meta name="theme-color" content="#88191a">
+  <link rel="icon" type="image/webp" href="assets/real/emw-seal.webp">
   <title>East Meets West Bath — Concept Preview</title>
   <style>
     :root {
@@ -219,39 +220,6 @@
       object-fit: cover;
       object-position: 50% 46%;
     }
-    .hero-seal {
-      position: absolute;
-      top: 26px;
-      left: 26px;
-      width: 112px;
-      height: 112px;
-      border: 7px solid rgba(243, 230, 201, 0.92);
-      box-shadow: 0 0 0 1px var(--red);
-    }
-    .hero-dish {
-      position: absolute;
-      right: 28px;
-      bottom: 28px;
-      width: min(37%, 270px);
-      aspect-ratio: 1;
-      border: 8px solid var(--cream);
-      background: var(--cream);
-      box-shadow: 0 16px 34px rgba(23, 19, 15, 0.24);
-    }
-    .hero-dish img { width: 100%; height: 100%; object-fit: cover; }
-    .hero-dish span {
-      position: absolute;
-      right: -8px;
-      bottom: -8px;
-      padding: 7px 10px;
-      background: var(--cream);
-      color: var(--red);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
-
     .quick-strip {
       background: var(--cream);
       border-bottom: 1px solid var(--line);
@@ -307,13 +275,15 @@
     .food-grid {
       margin-top: 58px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      grid-template-columns: 1.18fr 1fr 1fr;
+      gap: 32px;
     }
     .food-card { min-width: 0; }
+    .food-card:nth-child(2) { margin-top: 34px; }
+    .food-card:nth-child(3) { margin-top: 68px; }
     .food-image {
       position: relative;
-      aspect-ratio: 1;
+      aspect-ratio: 4 / 3;
       overflow: hidden;
       background: #eadcc0;
     }
@@ -378,6 +348,7 @@
       grid-template-columns: minmax(420px, .95fr) minmax(0, 1.05fr);
     }
     .experience-photo { min-height: 720px; }
+    .experience-photo picture { display: block; width: 100%; height: 100%; }
     .experience-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 56%; }
     .experience-copy {
       min-width: 0;
@@ -397,7 +368,7 @@
     .experience-facts { margin: 38px 0 0; border-top: 1px solid var(--line); }
     .fact {
       display: grid;
-      grid-template-columns: 115px 1fr;
+      grid-template-columns: 135px 1fr;
       gap: 22px;
       padding: 17px 0;
       border-bottom: 1px solid var(--line);
@@ -502,10 +473,6 @@
       .hero-actions .button { flex: 1 1 150px; padding-inline: 13px; }
       .hero-meta { margin-top: 19px; padding-top: 14px; font-size: 11px; }
       .hero-visual { min-height: 365px; border-left: 0; border-top: 7px solid var(--cream); }
-      .hero-seal { top: 16px; left: 16px; width: 74px; height: 74px; border-width: 5px; }
-      .hero-dish { right: 15px; bottom: 15px; width: 132px; border-width: 6px; }
-      .hero-dish span { right: -6px; bottom: -6px; padding: 5px 7px; font-size: 8px; }
-
       .quick-strip-inner { width: 100%; grid-template-columns: 1fr; }
       .quick-item { padding: 17px 20px; border-right: 0; border-bottom: 1px solid var(--line); }
       .quick-item:first-child { border-left: 0; }
@@ -516,6 +483,7 @@
       .section h2 { font-size: 42px; }
       .section-intro { margin-top: 18px; font-size: 16px; }
       .food-grid { margin-top: 38px; grid-template-columns: 1fr; gap: 42px; }
+      .food-card:nth-child(2), .food-card:nth-child(3) { margin-top: 0; }
       .food-copy { padding-top: 17px; }
 
       .menu-panel { margin-top: 55px; grid-template-columns: 1fr; }
@@ -525,11 +493,11 @@
       .menu-link strong { font-size: 20px; }
 
       .experience-inner { grid-template-columns: 1fr; }
-      .experience-photo { min-height: 460px; }
+      .experience-photo { min-height: 0; aspect-ratio: 4 / 3; }
       .experience-copy { padding: 67px 20px 74px; }
       .experience-copy h2 { font-size: 45px; }
       .experience-copy > p { font-size: 16px; }
-      .fact { grid-template-columns: 96px 1fr; gap: 15px; }
+      .fact { grid-template-columns: 112px 1fr; gap: 15px; }
 
       .reservation-inner { width: calc(100% - 40px); padding: 67px 0; grid-template-columns: 1fr; gap: 34px; }
       .reservation h2 { font-size: 43px; }
@@ -616,24 +584,19 @@
       <div class="hero-inner">
         <div class="hero-copy">
           <p class="eyebrow">Chinese restaurant &amp; noodle bar · Central Bath</p>
-          <h1 id="hero-title">Cantonese, Sichuan, Northern Chinese — and plenty more.</h1>
-          <p class="hero-lede">East Meets West brings a wide-ranging menu to Southgate Street, with published menus, table requests and telephone ordering easy to reach.</p>
+          <h1 id="hero-title">Cantonese, Sichuan and Northern Chinese cooking.</h1>
+          <p class="hero-lede">A wide-ranging menu on Southgate Street, with published menus, table requests and telephone ordering all easy to find.</p>
           <div class="hero-actions">
             <a class="button button-light" href="#menus">View the menus <span aria-hidden="true">↓</span></a>
             <a class="button button-outline-light" href="tel:+441225316088">Call to reserve <span aria-hidden="true">↗</span></a>
           </div>
           <p class="hero-meta">33 Southgate Street, Bath BA1 1TP · Open daily 11:00–22:30</p>
         </div>
-        <div class="hero-visual" aria-label="East Meets West shopfront and food">
+        <div class="hero-visual" aria-label="East Meets West shopfront">
           <picture>
             <source media="(max-width: 920px)" srcset="assets/real/emw-storefront-mobile.webp">
-            <img src="assets/real/emw-storefront-desktop.webp" width="980" height="940" alt="The red East Meets West shopfront on Southgate Street, Bath">
+            <img src="assets/real/emw-storefront-desktop.webp" width="800" height="800" alt="East Meets West shopfront on Southgate Street, Bath" fetchpriority="high">
           </picture>
-          <img class="hero-seal" src="assets/real/emw-seal.webp" width="480" height="480" alt="" aria-hidden="true">
-          <div class="hero-dish">
-            <img src="assets/real/emw-hotpot.webp" width="900" height="900" alt="A chilli-rich dish from the East Meets West official gallery">
-            <span>From the official gallery</span>
-          </div>
         </div>
       </div>
     </section>
@@ -649,69 +612,72 @@
     <section class="section" id="menus" aria-labelledby="menus-title">
       <p class="section-kicker">The menu</p>
       <h2 id="menus-title">One restaurant, several Chinese cooking traditions.</h2>
-      <p class="section-intro">The restaurant’s current website describes Cantonese, Sichuan and Northern Chinese cooking alongside Thai dishes, dim sum and buns. The preview keeps those choices clear without guessing at current prices.</p>
+      <p class="section-intro">The published menus include Cantonese, Sichuan and Northern Chinese cooking alongside Thai dishes, dim sum and buns. Browse the English, Chinese and drinks menus below, and check current prices directly with the restaurant.</p>
 
       <div class="food-grid">
         <article class="food-card">
           <div class="food-image">
-            <img src="assets/real/emw-hotpot.webp" width="900" height="900" alt="A chilli-rich dish from the East Meets West official gallery">
+            <img src="assets/real/emw-hotpot.webp" width="800" height="600" alt="A chilli-rich dish served in a tabletop pan" decoding="async">
             <span class="food-index">01</span>
           </div>
           <div class="food-copy">
-            <h3>Sichuan &amp; Northern Chinese</h3>
-            <p>For diners looking beyond the familiar: the restaurant’s own menu covers chilli-led dishes and Northern Chinese cooking.</p>
+            <h3>Sichuan and Northern Chinese</h3>
+            <p>The published menu includes chilli-led Sichuan dishes alongside Northern Chinese cooking.</p>
           </div>
         </article>
         <article class="food-card">
           <div class="food-image">
-            <img src="assets/real/emw-noodles.webp" width="900" height="900" alt="A bowl of noodles from the East Meets West official gallery">
+            <img src="assets/real/emw-noodles.webp" width="800" height="600" alt="A bowl of noodles with a colourful topping" decoding="async">
             <span class="food-index">02</span>
           </div>
           <div class="food-copy">
-            <h3>Noodles, dim sum &amp; buns</h3>
-            <p>Noodle-bar comfort and smaller dishes sit alongside the restaurant’s wider menu — useful for lunch, dinner or a quick stop.</p>
+            <h3>Noodles, dim sum and buns</h3>
+            <p>Noodles sit alongside dim sum, buns and smaller dishes, with choices for lunch or dinner.</p>
           </div>
         </article>
         <article class="food-card">
           <div class="food-image">
-            <img src="assets/real/emw-tofu-rice.webp" width="900" height="900" alt="Tofu with rice from the East Meets West official gallery">
+            <img src="assets/real/emw-plated-dish.webp" width="800" height="600" alt="A plated dish with herbs and vegetables" decoding="async">
             <span class="food-index">03</span>
           </div>
           <div class="food-copy">
-            <h3>Cantonese &amp; familiar favourites</h3>
-            <p>The published menus give diners a broad choice. Use the links below for the restaurant’s current English, Chinese and drinks menus.</p>
+            <h3>From the wider menu</h3>
+            <p>The published menus also include Cantonese and Thai dishes, with a broad choice for lunch or dinner.</p>
           </div>
         </article>
       </div>
 
       <div class="menu-panel" aria-label="Published menu links">
         <div class="menu-panel-copy">
-          <h3>Choose the menu you need.</h3>
-          <p>These buttons open the restaurant’s existing published PDFs or its current menu page. Prices are not repeated in this preview.</p>
+          <h3>Choose a menu.</h3>
+          <p>Browse the restaurant’s published English, Chinese and drinks menus, or open the current menu page.</p>
         </div>
         <div class="menu-panel-links">
           <a class="menu-link" href="https://www.eastmeetswestbath.com/_files/ugd/fea778_c7a9babe156943459cb707ad1d266d2a.pdf" target="_blank" rel="noopener noreferrer"><span>Published PDF</span><strong>English menu ↗</strong></a>
           <a class="menu-link" href="https://www.eastmeetswestbath.com/_files/ugd/fea778_4f119485fa594ff08e91460a3ed3946d.pdf" target="_blank" rel="noopener noreferrer"><span>Published PDF</span><strong>Chinese menu ↗</strong></a>
           <a class="menu-link" href="https://www.eastmeetswestbath.com/_files/ugd/fea778_401307ff0c0c4247ad532cc01fee4716.pdf" target="_blank" rel="noopener noreferrer"><span>Published PDF</span><strong>Drinks menu ↗</strong></a>
-          <a class="menu-link" href="https://www.eastmeetswestbath.com/menu" target="_blank" rel="noopener noreferrer"><span>Current official site</span><strong>All menu links ↗</strong></a>
+          <a class="menu-link" href="https://www.eastmeetswestbath.com/menu" target="_blank" rel="noopener noreferrer"><span>Official website</span><strong>All menu links ↗</strong></a>
         </div>
       </div>
-      <p class="menu-note">Please ask the restaurant about current dishes, prices and allergy information before ordering.</p>
+      <p class="menu-note">Please speak to the restaurant about current dishes, prices, ingredients and allergens before ordering.</p>
     </section>
 
     <section class="experience" id="dining" aria-labelledby="dining-title">
       <div class="experience-inner">
         <div class="experience-photo">
-          <img src="assets/real/emw-interior.webp" width="900" height="1120" alt="The warm dining room and bar inside East Meets West">
+          <picture>
+            <source media="(max-width: 920px)" srcset="assets/real/emw-interior-mobile.webp">
+            <img src="assets/real/emw-interior.webp" width="720" height="810" alt="Dining room and bar at East Meets West" decoding="async">
+          </picture>
         </div>
         <div class="experience-copy">
           <p class="section-kicker">On Southgate Street</p>
-          <h2 id="dining-title">A warm, unmistakably local dining room.</h2>
-          <p>The real shopfront, seal and interior do the talking here. The result feels more polished without turning East Meets West into a different kind of restaurant.</p>
+          <h2 id="dining-title">A relaxed dining room on Southgate Street.</h2>
+          <p>Warm pendant lighting, dark wood tables and the mosaic-fronted counter give the room its own character.</p>
           <dl class="experience-facts">
             <div class="fact"><dt>Find it</dt><dd>33 Southgate Street, Bath BA1 1TP</dd></div>
-            <div class="fact"><dt>Opening</dt><dd>Daily, 11:00–22:30</dd></div>
-            <div class="fact"><dt>For tables</dt><dd>Request online or call 01225 316088</dd></div>
+            <div class="fact"><dt>Opening hours</dt><dd>Daily, 11:00–22:30</dd></div>
+            <div class="fact"><dt>Table requests</dt><dd>Request online or call 01225 316088</dd></div>
             <div class="fact"><dt>Takeaway</dt><dd>Call to ask about the current options</dd></div>
           </dl>
         </div>
@@ -722,13 +688,13 @@
       <div class="reservation-inner">
         <div>
           <p class="section-kicker" style="color:#f8d9aa">Planning to dine in?</p>
-          <h2 id="reserve-title">Request a table, or speak to the restaurant.</h2>
-          <p>The existing website provides a table-request form. For a direct conversation, call the restaurant during opening hours.</p>
+          <h2 id="reserve-title">Request a table or speak to the restaurant.</h2>
+          <p>The existing website provides a table request form. If you prefer, call the restaurant during opening hours.</p>
         </div>
         <div class="reservation-actions">
           <a class="button button-light" href="https://www.eastmeetswestbath.com/#reservation" target="_blank" rel="noopener noreferrer">Request a table ↗</a>
           <a class="button button-outline-light" href="tel:+441225316088">Call to reserve</a>
-          <span class="reservation-note">A request is not an instant confirmation.</span>
+          <span class="reservation-note">Submitting a request does not confirm your booking.</span>
         </div>
       </div>
     </section>
@@ -740,28 +706,28 @@
         <div>
           <dl class="visit-list">
             <div class="visit-row"><dt>Address</dt><dd>33 Southgate Street<br>Bath BA1 1TP</dd></div>
-            <div class="visit-row"><dt>Hours</dt><dd>Monday–Sunday<br>11:00–22:30</dd></div>
+            <div class="visit-row"><dt>Hours</dt><dd>Daily<br>11:00–22:30</dd></div>
             <div class="visit-row"><dt>Telephone</dt><dd><a href="tel:+441225316088">01225 316088</a></dd></div>
             <div class="visit-row"><dt>Email</dt><dd><a href="mailto:east.meets.west.bath@gmail.com">east.meets.west.bath@gmail.com</a></dd></div>
           </dl>
           <div class="action-row visit-actions">
             <a class="button button-red" href="https://www.google.com/maps/search/?api=1&amp;query=East%20Meets%20West%2033%20Southgate%20Street%20Bath%20BA1%201TP" target="_blank" rel="noopener noreferrer">Get directions ↗</a>
-            <a class="button button-outline-ink" href="https://www.eastmeetswestbath.com/" target="_blank" rel="noopener noreferrer">Current official site ↗</a>
+            <a class="button button-outline-ink" href="https://www.eastmeetswestbath.com/" target="_blank" rel="noopener noreferrer">Official website ↗</a>
           </div>
         </div>
         <aside class="visit-aside">
           <img src="assets/real/emw-seal.webp" width="480" height="480" alt="" aria-hidden="true">
           <h3>Ordering a takeaway?</h3>
-          <p>The current website asks customers to call. Use the number below to ask about the current takeaway and delivery options.</p>
+          <p>For current takeaway and delivery options, call the restaurant directly.</p>
           <a class="button button-ink" style="margin-top:24px" href="tel:+441225316088">Call 01225 316088</a>
         </aside>
       </div>
     </section>
 
     <section class="final-cta" aria-labelledby="final-title">
-      <h2 id="final-title">Menus, tables and directions — without the search.</h2>
+      <h2 id="final-title">Everything you need for your visit.</h2>
       <div class="final-cta-copy">
-        <p>Choose the next step that suits your visit. For current availability, prices or allergy information, please check directly with the restaurant.</p>
+        <p>Browse the menus or call the restaurant. For current availability, prices, ingredients and allergens, please check directly with the restaurant.</p>
         <div class="action-row">
           <a class="button button-red" href="#menus">View the menus</a>
           <a class="button button-outline-ink" href="tel:+441225316088">Call the restaurant</a>
@@ -773,7 +739,7 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">East Meets West · Bath</div>
-      <div class="footer-note">Concept website preview for design discussion only — not the restaurant’s current official website. Public business information should be confirmed directly with <a href="https://www.eastmeetswestbath.com/" target="_blank" rel="noopener noreferrer">East Meets West</a>.</div>
+      <div class="footer-note">Concept website preview for design discussion only — not the restaurant’s current official website. Please confirm current menus, opening hours and availability directly with <a href="https://www.eastmeetswestbath.com/" target="_blank" rel="noopener noreferrer">East Meets West</a>.</div>
     </div>
   </footer>
 
